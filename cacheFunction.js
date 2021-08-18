@@ -4,7 +4,7 @@ function cacheFunction(cb) {
                     if (!cache.hasOwnProperty(a)) { cache[a] = cb(a);
                     console.log("CallBack Invoked");
                     return cb(a); }
-                    else { return cache[a]; }
+                    else { return cb(a); }
           }
           return oneTime;
 }
