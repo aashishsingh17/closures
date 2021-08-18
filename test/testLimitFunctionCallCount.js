@@ -1,8 +1,15 @@
 import * as ash from "../limitFunctionCallCount.js"
-console.log(ash.limitFunctionCallCount(cb, 10)());
-function cb(i) {
-    if(i==0)
-    console.log(`I am CallBack invoked for ${i+1} time`);
-    else
-    console.log(`I am CallBack invoked for ${i+1} times`);
+var callFun = ash.limitFunctionCallCount(cb, 2);
+var x1=callFun();
+var x2=callFun();
+var x3=callFun();
+console.log(x1);
+console.log(x2);
+console.log(x3);
+function cb()
+{
+    return (`invoked cb `);
 }
+
+
+
